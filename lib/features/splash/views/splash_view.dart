@@ -25,7 +25,7 @@ class _SplashViewState extends State<SplashView> {
 
   void _hideAppBarStatus() {
     SystemChrome.setEnabledSystemUIMode(
-      SystemUiMode.manual,
+      SystemUiMode.immersiveSticky,
       overlays: [
         SystemUiOverlay.bottom,
       ],

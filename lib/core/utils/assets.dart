@@ -5,6 +5,18 @@ class Assets {
   /// assets/images/app_icon.png
   static const String imagesAppIcon = "assets/images/app_icon.png";
 
+  /// Assets for imagesOnBoardingBg
+  /// assets/images/on_boarding_bg.svg
+  static const String imagesOnBoardingBg = "assets/images/on_boarding_bg.svg";
+
+  /// Assets for imagesOnBoardingLogo1
+  /// assets/images/on_boarding_logo1.svg
+  static const String imagesOnBoardingLogo1 = "assets/images/on_boarding_logo1.svg";
+
+  /// Assets for imagesOnBoardingLogo2
+  /// assets/images/on_boarding_logo2.svg
+  static const String imagesOnBoardingLogo2 = "assets/images/on_boarding_logo2.svg";
+
   /// Assets for imagesSplashBottom
   /// assets/images/splash_bottom.svg
   static const String imagesSplashBottom = "assets/images/splash_bottom.svg";
