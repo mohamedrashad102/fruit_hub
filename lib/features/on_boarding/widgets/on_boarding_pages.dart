@@ -14,9 +14,11 @@ class OnBoardingPages extends StatelessWidget {
   Widget build(BuildContext context) {
     return PageView(
       controller: pageController,
-      children: const [
-        OnBoardingPage1(),
-        OnBoardingPage2(),
+      children: [
+        OnBoardingPage1(
+          pageController: pageController,
+        ),
+        const OnBoardingPage2(),
       ],
     );
   }

@@ -6,12 +6,21 @@ import 'custom_on_boarding_page.dart';
 class OnBoardingPage1 extends StatelessWidget {
   const OnBoardingPage1({
     super.key,
+    required this.pageController,
   });
+
+  final PageController pageController;
 
   @override
   Widget build(BuildContext context) {
     return CustomOnBoardingPage(
       isSkip: true,
+      onPressed: () {
+        pageController.nextPage(
+          duration: const Duration(seconds: 1),
+          curve: Curves.easeInOut,
+        );
+      },
       color: const Color.fromARGB(255, 245, 198, 110),
       logoPath: Assets.imagesOnBoardingLogo1,
       title: RichText(

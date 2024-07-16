@@ -14,6 +14,7 @@ class CustomOnBoardingPage extends StatelessWidget {
     required this.description,
     required this.color,
     this.isSkip = false,
+    this.onPressed,
   });
 
   final String logoPath;
@@ -21,6 +22,7 @@ class CustomOnBoardingPage extends StatelessWidget {
   final String description;
   final Color color;
   final bool isSkip;
+  final void Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +32,7 @@ class CustomOnBoardingPage extends StatelessWidget {
           color: color,
           logoPath: logoPath,
           isSkip: isSkip,
+          onPressed: onPressed,
         ),
         const Gap(60),
         Padding(

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:fruit_hub/core/utils/app_colors.dart';
 import 'package:gap/gap.dart';
 
+import '../../../core/widgets/custom_button.dart';
 import '../widgets/on_boarding_pages.dart';
 
 class OnBoardingView extends StatefulWidget {
@@ -14,6 +15,17 @@ class OnBoardingView extends StatefulWidget {
 
 class _OnBoardingViewState extends State<OnBoardingView> {
   final _pageController = PageController(initialPage: 0);
+  int _page = 0;
+
+  @override
+  void initState() {
+    _pageController.addListener(() {
+      setState(() {
+        _page = _pageController.page!.round();
+      });
+    });
+    super.initState();
+  }
 
   @override
   void dispose() {
@@ -32,29 +44,25 @@ class _OnBoardingViewState extends State<OnBoardingView> {
             ),
           ),
           DotsIndicator(
-            position: 0,
+            position: _page,
             dotsCount: 2,
             decorator: DotsDecorator(
               activeColor: AppColors.primaryColor,
               color: AppColors.primaryColor.withOpacity(0.5),
             ),
           ),
-          // const Gap(20),
-          // SizedBox(
-          //   height: 125,
-          //   child: BottomSection(),
-          // ),
+          const Gap(20),
+          Visibility(
+            visible: _page == 1,
+            maintainSize: true,
+            maintainAnimation: true,
+            maintainState: true,
+            child: const CustomButton(
+              text: 'ابدأ',
+            ),
+          ),
         ],
       ),
     );
-  }
-}
-
-class BottomSection extends StatelessWidget {
-  const BottomSection({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Gap(20);
   }
 }

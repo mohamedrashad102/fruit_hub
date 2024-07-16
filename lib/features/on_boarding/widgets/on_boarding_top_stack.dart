@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:fruit_hub/core/utils/assets.dart';
 import 'package:fruit_hub/core/widgets/custom_visibiltiy.dart';
 import 'package:svg_flutter/svg.dart';
@@ -9,11 +9,13 @@ class OnBoardingTopStack extends StatelessWidget {
     required this.logoPath,
     required this.color,
     required this.isSkip,
+    this.onPressed,
   });
 
   final String logoPath;
   final Color color;
   final bool isSkip;
+  final void Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -37,15 +39,18 @@ class OnBoardingTopStack extends StatelessWidget {
           ),
           CustomVisibility(
             isVisible: isSkip,
-            child: const Positioned(
+            child: Positioned(
               top: 40,
               right: 20,
-              child: Text(
-                'تخط',
-                style: TextStyle(
-                  fontSize: 13,
-                  fontWeight: FontWeight.w400,
-                  color: Color(0xff949D9E),
+              child: TextButton(
+                onPressed: onPressed,
+                child: const Text(
+                  'تخط',
+                  style: TextStyle(
+                    fontSize: 13,
+                    fontWeight: FontWeight.w400,
+                    color: Color(0xff949D9E),
+                  ),
                 ),
               ),
             ),
