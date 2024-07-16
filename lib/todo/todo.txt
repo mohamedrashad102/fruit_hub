@@ -1,3 +1,9 @@
-- Implement shared preferences to cache the onboarding state
+Todo:
 - Create an AppStyles class to store the styling information
 - Apply the styles defined in the AppStyles class to the app
+
+
+
+Done:
+- Fix the skip button's onPressed method
+- Implement shared preferences to cache the onboarding state

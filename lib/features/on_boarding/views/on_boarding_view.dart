@@ -4,6 +4,7 @@ import 'package:fruit_hub/core/utils/app_colors.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../core/cached_data/cached_data.dart';
 import '../../../core/utils/app_router.dart';
 import '../../../core/widgets/custom_button.dart';
 import '../widgets/on_boarding_pages.dart';
@@ -62,6 +63,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
             child: CustomButton(
               text: 'ابدأ',
               onPressed: () {
+                CachedData.setSkipOnboarding(true);
                 context.go(AppRouter.loginView);
               },
             ),

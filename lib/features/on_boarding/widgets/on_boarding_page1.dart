@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_hub/core/cached_data/cached_data.dart';
 import 'package:fruit_hub/core/utils/app_router.dart';
 import 'package:fruit_hub/core/utils/assets.dart';
 import 'package:go_router/go_router.dart';
@@ -18,6 +19,7 @@ class OnBoardingPage1 extends StatelessWidget {
     return CustomOnBoardingPage(
       isSkip: true,
       onPressed: () {
+        CachedData.setSkipOnboarding(true);
         context.go(AppRouter.loginView);
       },
       color: const Color.fromARGB(255, 245, 198, 110),

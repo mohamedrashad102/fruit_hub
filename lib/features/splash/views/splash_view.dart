@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:fruit_hub/core/cached_data/cached_data.dart';
 import 'package:fruit_hub/core/utils/app_router.dart';
 import 'package:go_router/go_router.dart';
 import 'package:svg_flutter/svg.dart';
@@ -33,10 +34,11 @@ class _SplashViewState extends State<SplashView> {
   }
 
   void _navigateToOnBoarding() {
-    Future.delayed(
-      const Duration(seconds: 2),
-      () => context.go(AppRouter.onBoardingView),
-    );
+    Future.delayed(const Duration(seconds: 2), () {
+      CachedData.getSkipOnboarding()
+          ? context.go(AppRouter.loginView)
+          : context.go(AppRouter.onBoardingView);
+    });
   }
 
   @override
