@@ -2,7 +2,9 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:fruit_hub/core/utils/app_colors.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 
+import '../../../core/utils/app_router.dart';
 import '../../../core/widgets/custom_button.dart';
 import '../widgets/on_boarding_pages.dart';
 
@@ -57,8 +59,11 @@ class _OnBoardingViewState extends State<OnBoardingView> {
             maintainSize: true,
             maintainAnimation: true,
             maintainState: true,
-            child: const CustomButton(
+            child: CustomButton(
               text: 'ابدأ',
+              onPressed: () {
+                context.go(AppRouter.loginView);
+              },
             ),
           ),
         ],

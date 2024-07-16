@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_hub/core/utils/app_router.dart';
 import 'package:fruit_hub/core/utils/assets.dart';
+import 'package:go_router/go_router.dart';
 
 import 'custom_on_boarding_page.dart';
 
@@ -16,10 +18,7 @@ class OnBoardingPage1 extends StatelessWidget {
     return CustomOnBoardingPage(
       isSkip: true,
       onPressed: () {
-        pageController.nextPage(
-          duration: const Duration(seconds: 1),
-          curve: Curves.easeInOut,
-        );
+        context.go(AppRouter.loginView);
       },
       color: const Color.fromARGB(255, 245, 198, 110),
       logoPath: Assets.imagesOnBoardingLogo1,
