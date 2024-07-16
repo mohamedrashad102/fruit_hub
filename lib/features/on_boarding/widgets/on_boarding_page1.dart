@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hub/core/cached_data/cached_data.dart';
 import 'package:fruit_hub/core/utils/app_router.dart';
+import 'package:fruit_hub/core/utils/app_styles.dart';
 import 'package:fruit_hub/core/utils/assets.dart';
 import 'package:go_router/go_router.dart';
 
@@ -25,28 +26,20 @@ class OnBoardingPage1 extends StatelessWidget {
       color: const Color.fromARGB(255, 245, 198, 110),
       logoPath: Assets.imagesOnBoardingLogo1,
       title: RichText(
-        text: const TextSpan(
-          text: ' مرحبًا بك في',
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 23,
-            fontWeight: FontWeight.bold,
-          ),
+        text: TextSpan(
+          text: 'مرحبًا بك في',
+          style: AppStyles.bold19,
           children: [
             TextSpan(
               text: ' Fruit',
-              style: TextStyle(
-                color: Color(0xff1B5E37),
-                fontSize: 23,
-                fontWeight: FontWeight.w700,
+              style: AppStyles.bold19.copyWith(
+                color: const Color(0xff1B5E37),
               ),
             ),
             TextSpan(
-              text: ' Hub',
-              style: TextStyle(
-                color: Color(0xffF4A91F),
-                fontSize: 23,
-                fontWeight: FontWeight.w700,
+              text: 'HUB',
+              style: AppStyles.bold19.copyWith(
+                color: const Color(0xffF4A91F),
               ),
             ),
           ],

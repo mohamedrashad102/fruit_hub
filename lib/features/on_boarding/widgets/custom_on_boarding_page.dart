@@ -36,7 +36,7 @@ class CustomOnBoardingPage extends StatelessWidget {
         ),
         const Gap(60),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: OnBoardingBottomColumn(
             title: title,
             description: description,

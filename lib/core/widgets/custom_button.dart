@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hub/core/utils/app_colors.dart';
+import 'package:fruit_hub/core/utils/app_styles.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({
@@ -26,11 +27,7 @@ class CustomButton extends StatelessWidget {
         alignment: Alignment.center,
         child: Text(
           text,
-          style: const TextStyle(
-            color: Colors.white,
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
-          ),
+          style: AppStyles.bold16,
         ),
       ),
     );

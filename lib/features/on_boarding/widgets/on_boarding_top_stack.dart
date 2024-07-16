@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_hub/core/utils/app_styles.dart';
 import 'package:fruit_hub/core/utils/assets.dart';
 import 'package:fruit_hub/core/widgets/custom_visibiltiy.dart';
 import 'package:svg_flutter/svg.dart';
@@ -44,13 +45,9 @@ class OnBoardingTopStack extends StatelessWidget {
               right: 20,
               child: TextButton(
                 onPressed: onPressed,
-                child: const Text(
+                child: Text(
                   'تخط',
-                  style: TextStyle(
-                    fontSize: 13,
-                    fontWeight: FontWeight.w400,
-                    color: Color(0xff949D9E),
-                  ),
+                  style: AppStyles.regular13,
                 ),
               ),
             ),

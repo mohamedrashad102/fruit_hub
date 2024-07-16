@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:fruit_hub/core/utils/app_styles.dart';
 import 'package:gap/gap.dart';
 
 class OnBoardingBottomColumn extends StatelessWidget {
@@ -20,9 +21,8 @@ class OnBoardingBottomColumn extends StatelessWidget {
         Text(
           description,
           textAlign: TextAlign.center,
-          style: const TextStyle(
-            fontSize: 13,
-            fontWeight: FontWeight.w600,
+          style: AppStyles.semiBold13.copyWith(
+            color: const Color(0xff4E5556),
           ),
         ),
       ],
