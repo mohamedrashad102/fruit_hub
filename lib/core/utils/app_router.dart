@@ -1,6 +1,7 @@
 import 'package:fruit_hub/features/auth/views/forget_password_view.dart';
 import 'package:fruit_hub/features/auth/views/login_view.dart';
 import 'package:fruit_hub/features/auth/views/sign_up_view.dart';
+import 'package:fruit_hub/features/auth/views/verify_code_view.dart';
 import 'package:fruit_hub/features/on_boarding/views/on_boarding_view.dart';
 import 'package:go_router/go_router.dart';
 
@@ -38,7 +39,7 @@ class AppRouter {
       ),
       GoRoute(
         path: verifyCodeView,
-        builder: (context, state) => const SignUpView(),
+        builder: (context, state) => const VerifyCodeView(),
       ),
       GoRoute(
         path: newPasswordView,

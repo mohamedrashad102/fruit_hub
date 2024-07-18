@@ -1,6 +1,5 @@
 Todo:
     - ForgetPassword UI
-        - VerifyCodeView
         - NewPasswordView
 
 Done:
@@ -17,3 +16,4 @@ Done:
     - SignUpView UI
     - ForgetPassword UI
         - ForgetPasswordView
+        - VerifyCodeView

@@ -8,18 +8,35 @@ class CustomTextField extends StatelessWidget {
     this.suffixIcon,
     this.keyboardType,
     this.obscureText = false,
+    this.controller,
+    this.focusNode,
+    this.maxLength,
+    this.textAlign,
+    this.autofocus,
+    this.onChanged,
   });
 
   final String? hintText;
   final Widget? suffixIcon;
   final TextInputType? keyboardType;
   final bool obscureText;
+  final TextEditingController? controller;
+  final FocusNode? focusNode;
+  final int? maxLength;
+  final TextAlign? textAlign;
+  final bool? autofocus;
+  final void Function(String value)? onChanged;
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      controller: controller,
+      focusNode: focusNode,
+      autofocus: autofocus ?? false,
       obscureText: obscureText,
       keyboardType: keyboardType,
+      maxLength: maxLength,
+      textAlign: textAlign ?? TextAlign.start,
       decoration: InputDecoration(
         filled: true,
         fillColor: const Color(0XFFF9FAFA),
@@ -29,7 +46,9 @@ class CustomTextField extends StatelessWidget {
         hintText: hintText,
         hintStyle: AppStyles.bold13,
         suffixIcon: suffixIcon,
+        counterText: '',
       ),
+      onChanged: onChanged,
     );
   }
 

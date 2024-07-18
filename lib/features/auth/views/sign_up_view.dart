@@ -19,25 +19,27 @@ class SignUpView extends StatelessWidget {
       appBar: CustomAppBar(
         title: 'حساب جديد',
       ),
-      body: Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: K.horizontalPadding,
-          vertical: K.verticalPadding,
-        ),
-        child: Column(
-          children: [
-            SignUpNameField(),
-            Gap(15),
-            SignUpEmailField(),
-            Gap(15),
-            SignUpPasswordField(),
-            Gap(15),
-            SignUpPrivacyPolicy(),
-            Gap(20),
-            SignUpButton(),
-            Gap(15),
-            LoginNow(),
-          ],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: K.horizontalPadding,
+            vertical: K.verticalPadding,
+          ),
+          child: Column(
+            children: [
+              SignUpNameField(),
+              Gap(15),
+              SignUpEmailField(),
+              Gap(15),
+              SignUpPasswordField(),
+              Gap(15),
+              SignUpPrivacyPolicy(),
+              Gap(20),
+              SignUpButton(),
+              Gap(15),
+              LoginNow(),
+            ],
+          ),
         ),
       ),
     );
