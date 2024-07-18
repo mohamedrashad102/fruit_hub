@@ -9,7 +9,7 @@ import '../widgets/login_by_apple.dart';
 import '../widgets/login_by_facebook.dart';
 import '../widgets/login_by_google.dart';
 import '../widgets/login_email_field.dart';
-import '../widgets/login_forget_password.dart';
+import '../widgets/forget_password.dart';
 import '../widgets/login_password_field.dart';
 import '../widgets/sign_up_now.dart';
 
@@ -36,7 +36,7 @@ class LoginView extends StatelessWidget {
               LoginPasswordField(),
               Align(
                 alignment: Alignment.centerLeft,
-                child: LoginForgetPassword(),
+                child: ForgetPassword(),
               ),
               // Gap(15),
               Gap(20),
