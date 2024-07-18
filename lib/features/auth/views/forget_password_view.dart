@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hub/core/widgets/custom_app_bar.dart';
-import 'package:fruit_hub/core/widgets/custom_button.dart';
-import 'package:fruit_hub/core/widgets/custom_text_field.dart';
 import 'package:gap/gap.dart';
 
 import '../../../core/utils/app_styles.dart';
 import '../../../k.dart';
+import '../widgets/forget_password_number_field.dart';
+import '../widgets/send_code_button.dart';
 
 class ForgetPasswordView extends StatelessWidget {
   const ForgetPasswordView({super.key});
@@ -36,30 +36,6 @@ class ForgetPasswordView extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-}
-
-class ForgetPasswordNumberField extends StatelessWidget {
-  const ForgetPasswordNumberField({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const CustomTextField(
-      hintText: 'رقم الهاتف',
-      keyboardType: TextInputType.phone,
-    );
-  }
-}
-
-class SendCodeButton extends StatelessWidget {
-  const SendCodeButton({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return CustomButton(
-      text: 'ارسال الرمز',
-      onPressed: () {},
     );
   }
 }
