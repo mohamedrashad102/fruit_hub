@@ -1,5 +1,7 @@
 Todo:
-    - ForgetPasswordView UI
+    - ForgetPassword UI
+        - VerifyCodeView
+        - NewPasswordView
 
 Done:
     - Fix the skip button's onPressed method
@@ -13,3 +15,5 @@ Done:
         - OrDivider
         - AuthButton
     - SignUpView UI
+    - ForgetPassword UI
+        - ForgetPasswordView

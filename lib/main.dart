@@ -26,7 +26,11 @@ class MyApp extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
+      
       locale: const Locale('ar'),
+      theme: ThemeData.light().copyWith(
+        scaffoldBackgroundColor: Colors.white,
+      ),
       supportedLocales: S.delegate.supportedLocales,
       routerConfig: AppRouter.router,
     );

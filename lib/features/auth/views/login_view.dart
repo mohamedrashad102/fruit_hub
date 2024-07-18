@@ -4,7 +4,7 @@ import 'package:gap/gap.dart';
 
 import '../../../core/widgets/custom_app_bar.dart';
 import '../../../core/widgets/or_divider.dart';
-import '../widgets/forget_password.dart';
+import '../widgets/forget_password_button.dart';
 import '../widgets/login_button.dart';
 import '../widgets/login_by_apple.dart';
 import '../widgets/login_by_facebook.dart';
@@ -19,7 +19,6 @@ class LoginView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      backgroundColor: Colors.white,
       appBar: CustomAppBar(
         title: 'تسجيل الدخول',
       ),
@@ -36,7 +35,7 @@ class LoginView extends StatelessWidget {
               LoginPasswordField(),
               Align(
                 alignment: Alignment.centerLeft,
-                child: ForgetPassword(),
+                child: ForgetPasswordButton(),
               ),
               // Gap(15),
               Gap(20),
