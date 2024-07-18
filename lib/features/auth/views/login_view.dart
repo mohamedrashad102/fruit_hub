@@ -4,12 +4,12 @@ import 'package:gap/gap.dart';
 
 import '../../../core/widgets/custom_app_bar.dart';
 import '../../../core/widgets/or_divider.dart';
+import '../widgets/forget_password.dart';
 import '../widgets/login_button.dart';
 import '../widgets/login_by_apple.dart';
 import '../widgets/login_by_facebook.dart';
 import '../widgets/login_by_google.dart';
 import '../widgets/login_email_field.dart';
-import '../widgets/forget_password.dart';
 import '../widgets/login_password_field.dart';
 import '../widgets/sign_up_now.dart';
 
@@ -27,10 +27,10 @@ class LoginView extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.symmetric(
             horizontal: K.horizontalPadding,
+            vertical: K.verticalPadding,
           ),
           child: Column(
             children: [
-              Gap(24),
               LoginEmailField(),
               Gap(15),
               LoginPasswordField(),
@@ -51,7 +51,6 @@ class LoginView extends StatelessWidget {
               LoginByApple(),
               Gap(15),
               LoginByFacebook(),
-              Gap(20),
             ],
           ),
         ),

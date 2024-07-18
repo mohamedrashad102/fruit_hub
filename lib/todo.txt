@@ -1,5 +1,4 @@
 Todo:
-    - SignUpView UI
     - ForgetPasswordView UI
 
 Done:
@@ -13,3 +12,4 @@ Done:
         - CustomTextButton
         - OrDivider
         - AuthButton
+    - SignUpView UI
