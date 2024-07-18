@@ -1,5 +1,6 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:fruit_hub/k.dart';
 import 'package:fruit_hub/core/utils/app_colors.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
@@ -60,12 +61,18 @@ class _OnBoardingViewState extends State<OnBoardingView> {
             maintainSize: true,
             maintainAnimation: true,
             maintainState: true,
-            child: CustomButton(
-              text: 'ابدأ',
-              onPressed: () {
-                CachedData.setSkipOnboarding(true);
-                context.go(AppRouter.loginView);
-              },
+            child: Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: K.horizontalPadding,
+                vertical: K.verticalPadding,
+              ),
+              child: CustomButton(
+                text: 'ابدأ',
+                onPressed: () {
+                  CachedData.setSkipOnboarding(true);
+                  context.go(AppRouter.loginView);
+                },
+              ),
             ),
           ),
         ],
