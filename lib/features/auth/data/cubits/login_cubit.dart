@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -28,6 +30,15 @@ class LoginCubit extends Cubit<LoginCubitState> {
       email: _email,
       password: _password,
     );
+    result.fold(
+      (failure) => emit(LoginFailureState(failure.message)),
+      (user) => emit(LoginSuccessState(UserModel.fromUserEntity(user))),
+    );
+  }
+
+  Future<void> loginWithGoogle() async {
+    emit(LoginLoadingState());
+    final result = await authRepo.signInWithGoogle();
     result.fold(
       (failure) => emit(LoginFailureState(failure.message)),
       (user) => emit(LoginSuccessState(UserModel.fromUserEntity(user))),

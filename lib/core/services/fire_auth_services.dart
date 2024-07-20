@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 import '../helpers/print.dart';
 import '../models/failure_model.dart';
@@ -55,6 +56,25 @@ class FireAuthServices {
       }
       Print.error(e.code);
       return Left(Failure(e.code));
+    }
+  }
+
+  static Future<Either<Failure, User>> signInWithGoogle() async {
+    try {
+      final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+      
+      final GoogleSignInAuthentication? googleAuth =
+          await googleUser?.authentication;
+      final credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth?.accessToken,
+        idToken: googleAuth?.idToken,
+      );
+      final userCredential = await auth.signInWithCredential(credential);
+      Print.info(userCredential.user!.uid);
+      return Right(userCredential.user!);
+    } on Exception catch (e) {
+      Print.error(e.toString());
+      return Left(Failure(e.toString()));
     }
   }
 }

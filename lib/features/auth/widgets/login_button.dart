@@ -14,6 +14,7 @@ class LoginButton extends StatelessWidget {
     return CustomButton(
       text: 'تسجيل الدخول',
       onPressed: context.read<LoginCubit>().loginWithEmailAndPassword,
+    
     );
   }
 }

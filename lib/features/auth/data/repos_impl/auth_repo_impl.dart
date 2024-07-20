@@ -35,4 +35,13 @@ class AuthRepoImpl implements AuthRepo {
       (user) => Right(UserEntity.fromUser(user)),
     );
   }
+
+  @override
+  Future<Either<Failure, UserEntity>> signInWithGoogle() async {
+    final result = await FireAuthServices.signInWithGoogle();
+    return result.fold(
+      (failure) => Left(failure),
+      (user) => Right(UserEntity.fromUser(user)),
+    );
+  }
 }
