@@ -15,14 +15,14 @@ class SignUpCubit extends Cubit<SignUpCubitState> {
   String email = '';
   String password = '';
   bool isAgreedWithTerms = false;
+  final fromKey = GlobalKey<FormState>();
   AutovalidateMode autoValidateMode = AutovalidateMode.always;
 
-  final fromKey = GlobalKey<FormState>();
 
   Future<void> signUpWithEmailAndPassword() async {
-    emit(SignUpLoadingState());
     if (_formNotValid()) return;
     if (_notAgreedWithTerms()) return;
+    emit(SignUpLoadingState());
     final result = await authRepo.signUpWithEmailAndPassword(
       email: email,
       password: password,
@@ -44,7 +44,6 @@ class SignUpCubit extends Cubit<SignUpCubitState> {
   bool _formNotValid() {
     if (!fromKey.currentState!.validate()) {
       autoValidateMode = AutovalidateMode.onUserInteraction;
-      emit(SignUpFailureState('يجب عليك ملء جميع الحقول'));
     }
     return !fromKey.currentState!.validate();
   }

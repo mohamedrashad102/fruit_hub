@@ -23,3 +23,4 @@ Done:
     - Setup FlutterFire
     - Sign in with email and password
         - ShowSnackBar
+    - Login with email and password
