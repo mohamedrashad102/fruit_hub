@@ -5,6 +5,8 @@ import '../helpers/print.dart';
 import '../models/failure_model.dart';
 
 class FireAuthServices {
+  FireAuthServices._();
+
   static final FirebaseAuth auth = FirebaseAuth.instance;
 
   static Future<Either<Failure, User>> signUpWithEmailAndPassword({
