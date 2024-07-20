@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_hub/core/cached_data/cached_data.dart';
+import 'package:fruit_hub/core/services/cached_data.dart';
 import 'package:fruit_hub/core/utils/app_router.dart';
 import 'package:fruit_hub/core/utils/app_styles.dart';
 import 'package:fruit_hub/core/utils/assets.dart';

@@ -1,3 +1,6 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruit_hub/features/auth/data/cubits/sign_up_cubit.dart';
+import 'package:fruit_hub/features/auth/data/repos_impl/auth_repo_impl.dart';
 import 'package:fruit_hub/features/auth/views/forget_password_view.dart';
 import 'package:fruit_hub/features/auth/views/login_view.dart';
 import 'package:fruit_hub/features/auth/views/sign_up_view.dart';
@@ -31,7 +34,12 @@ class AppRouter {
       ),
       GoRoute(
         path: signUpView,
-        builder: (context, state) => const SignUpView(),
+        builder: (context, state) => BlocProvider(
+          create: (context) => SignUpCubit(
+            authRepo: AuthRepoImpl(),
+          ),
+          child: const SignUpView(),
+        ),
       ),
       GoRoute(
         path: forgetPasswordView,

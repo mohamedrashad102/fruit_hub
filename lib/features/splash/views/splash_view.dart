@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:fruit_hub/core/cached_data/cached_data.dart';
+import 'package:fruit_hub/core/services/cached_data.dart';
 import 'package:fruit_hub/core/utils/app_router.dart';
 import 'package:go_router/go_router.dart';
 import 'package:svg_flutter/svg.dart';

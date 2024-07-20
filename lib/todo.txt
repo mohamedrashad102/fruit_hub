@@ -1,6 +1,9 @@
 Todo:
     - ForgetPassword UI
         - NewPasswordView
+    - Sign in with facebook
+    - Sign in with google
+    - Sign in with apple
 
 Done:
     - Fix the skip button's onPressed method
@@ -18,3 +21,5 @@ Done:
         - ForgetPasswordView
         - VerifyCodeView
     - Setup FlutterFire
+    - Sign in with email and password
+        - ShowSnackBar

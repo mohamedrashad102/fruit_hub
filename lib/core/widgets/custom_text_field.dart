@@ -14,6 +14,7 @@ class CustomTextField extends StatelessWidget {
     this.textAlign,
     this.autofocus,
     this.onChanged,
+    this.validator,
   });
 
   final String? hintText;
@@ -26,10 +27,11 @@ class CustomTextField extends StatelessWidget {
   final TextAlign? textAlign;
   final bool? autofocus;
   final void Function(String value)? onChanged;
+  final String? Function(String? value)? validator;
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
       controller: controller,
       focusNode: focusNode,
       autofocus: autofocus ?? false,
@@ -48,6 +50,7 @@ class CustomTextField extends StatelessWidget {
         suffixIcon: suffixIcon,
         counterText: '',
       ),
+      validator: validator,
       onChanged: onChanged,
     );
   }
