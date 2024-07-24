@@ -35,6 +35,9 @@ class MyApp extends StatelessWidget {
       locale: const Locale('ar'),
       theme: ThemeData.light().copyWith(
         scaffoldBackgroundColor: Colors.white,
+        appBarTheme: const AppBarTheme(
+          color: Colors.white,
+        ),
       ),
       supportedLocales: S.delegate.supportedLocales,
       routerConfig: AppRouter.router,
