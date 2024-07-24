@@ -9,7 +9,7 @@ import 'package:fruit_hub/features/auth/views/verify_code_view.dart';
 import 'package:fruit_hub/features/on_boarding/views/on_boarding_view.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../features/home/home_view.dart';
+import '../../features/home/views/home_view.dart';
 import '../../features/splash/views/splash_view.dart';
 
 class AppRouter {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'widgets/home_view_app_bar.dart';
+import '../widgets/home_view_app_bar.dart';
+import '../widgets/home_view_body.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -9,6 +10,7 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       appBar: HomeViewAppBar(),
+      body: HomeViewBody(),
     );
   }
 }
