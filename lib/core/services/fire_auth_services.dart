@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 import '../helpers/print.dart';
@@ -62,7 +63,6 @@ class FireAuthServices {
   static Future<Either<Failure, User>> signInWithGoogle() async {
     try {
       final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
-      
       final GoogleSignInAuthentication? googleAuth =
           await googleUser?.authentication;
       final credential = GoogleAuthProvider.credential(
@@ -70,9 +70,22 @@ class FireAuthServices {
         idToken: googleAuth?.idToken,
       );
       final userCredential = await auth.signInWithCredential(credential);
-      Print.info(userCredential.user!.uid);
       return Right(userCredential.user!);
     } on Exception catch (e) {
+      Print.error(e.toString());
+      return Left(Failure(e.toString()));
+    }
+  }
+
+  static Future<Either<Failure, User>> signInWithFacebook() async {
+    try {
+      final LoginResult loginResult = await FacebookAuth.instance.login();
+      final OAuthCredential facebookAuthCredential =
+          FacebookAuthProvider.credential(loginResult.accessToken!.tokenString);
+      final userCredential =
+          await auth.signInWithCredential(facebookAuthCredential);
+      return Right(userCredential.user!);
+    } catch (e) {
       Print.error(e.toString());
       return Left(Failure(e.toString()));
     }

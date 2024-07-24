@@ -45,6 +45,15 @@ class LoginCubit extends Cubit<LoginCubitState> {
     );
   }
 
+  Future<void> loginWithFacebook() async {
+    emit(LoginLoadingState());
+    final result = await authRepo.signInWithFacebook();
+    result.fold(
+      (failure) => emit(LoginFailureState(failure.message)),
+      (user) => emit(LoginSuccessState(UserModel.fromUserEntity(user))),
+    );
+  }
+
   bool _formNotValid() {
     if (!fromKey.currentState!.validate()) {
       autoValidateMode = AutovalidateMode.onUserInteraction;

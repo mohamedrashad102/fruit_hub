@@ -1,8 +1,6 @@
 Todo:
     - ForgetPassword UI
         - NewPasswordView
-    - Sign in with facebook
-    - Sign in with google
     - Sign in with apple
 
 Done:
@@ -24,3 +22,5 @@ Done:
     - Sign in with email and password
         - ShowSnackBar
     - Login with email and password
+    - Sign in with facebook
+    - Sign in with google

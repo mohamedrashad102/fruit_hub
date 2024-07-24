@@ -44,4 +44,13 @@ class AuthRepoImpl implements AuthRepo {
       (user) => Right(UserEntity.fromUser(user)),
     );
   }
+
+  @override
+  Future<Either<Failure, UserEntity>> signInWithFacebook() async {
+    final result = await FireAuthServices.signInWithFacebook();
+    return result.fold(
+      (failure) => Left(failure),
+      (user) => Right(UserEntity.fromUser(user)),
+    );
+  }
 }
