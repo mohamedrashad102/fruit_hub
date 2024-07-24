@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruit_hub/core/extensions/show_snack_bar_extension.dart';
+import 'package:fruit_hub/core/services/cached_data.dart';
 import 'package:fruit_hub/core/utils/app_router.dart';
 import 'package:fruit_hub/features/auth/data/cubits/login_cubit.dart';
 import 'package:go_router/go_router.dart';
@@ -24,6 +25,7 @@ class LoginView extends StatelessWidget {
             context.showSnackBar(state.message);
           } else if (state is LoginSuccessState) {
             context.showSnackBar('تم تسجيل الدخول بنجاح');
+            CachedData.setIsLogin(true);
             context.go(AppRouter.homeView);
           }
         },

@@ -36,7 +36,9 @@ class _SplashViewState extends State<SplashView> {
   void _navigateToOnBoarding() {
     Future.delayed(const Duration(seconds: 2), () {
       CachedData.getSkipOnboarding()
-          ? context.go(AppRouter.loginView)
+          ? CachedData.getIsLogin()
+              ? context.go(AppRouter.homeView)
+              : context.go(AppRouter.loginView)
           : context.go(AppRouter.onBoardingView);
     });
   }

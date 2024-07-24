@@ -17,4 +17,12 @@ class CachedData {
   static bool getSkipOnboarding() {
     return _pref.getBool(Keys.skipOnboarding) ?? false;
   }
+
+  static Future<bool> setIsLogin(bool value) async {
+    return await _pref.setBool(Keys.isLogin, value);
+  }
+
+  static bool getIsLogin() {
+    return _pref.getBool(Keys.isLogin) ?? false;
+  }
 }
