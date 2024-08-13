@@ -34,7 +34,9 @@ class SignUpCubit extends Cubit<SignUpCubitState> {
     result.fold(
       (failure) => emit(SignUpFailureState(failure.message)),
       (user) {
-        dataBaseServices.saveUserData(user);
+        // Save user data
+        final updatedUser = user.copyWith(name: name);
+        dataBaseServices.saveUserData(updatedUser);
         emit(SignUpSuccessState());
       },
     );
