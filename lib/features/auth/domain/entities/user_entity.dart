@@ -3,13 +3,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 class UserEntity {
   final String name;
   final String email;
-  final String password;
   final String id;
 
   UserEntity({
     required this.name,
     required this.email,
-    required this.password,
     required this.id,
   });
 
@@ -17,8 +15,20 @@ class UserEntity {
     return UserEntity(
       name: user.displayName ?? '',
       email: user.email ?? '',
-      password: '',
       id: user.uid,
     );
   }
+
+
+  factory UserEntity.fromMap(Map<String, dynamic> json) => UserEntity(
+        name: json["name"],
+        email: json["email"],
+        id: json["id"],
+      );
+
+  Map<String, dynamic> toMap() => {
+        "name": name,
+        "email": email,
+        "id": id,
+      };
 }

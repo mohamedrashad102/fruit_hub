@@ -1,4 +1,4 @@
-import 'package:fruit_hub/core/utils/keys.dart';
+import 'package:fruit_hub/core/utils/app_keys.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class CachedData {
@@ -11,18 +11,18 @@ class CachedData {
   }
 
   static Future<bool> setSkipOnboarding(bool value) async {
-    return await _pref.setBool(Keys.skipOnboarding, value);
+    return await _pref.setBool(AppKeys.skipOnboarding, value);
   }
 
   static bool getSkipOnboarding() {
-    return _pref.getBool(Keys.skipOnboarding) ?? false;
+    return _pref.getBool(AppKeys.skipOnboarding) ?? false;
   }
 
   static Future<bool> setIsLogin(bool value) async {
-    return await _pref.setBool(Keys.isLogin, value);
+    return await _pref.setBool(AppKeys.isLogin, value);
   }
 
   static bool getIsLogin() {
-    return _pref.getBool(Keys.isLogin) ?? false;
+    return _pref.getBool(AppKeys.isLogin) ?? false;
   }
 }
