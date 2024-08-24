@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_hub/core/utils/app_styles.dart';
-import 'package:fruit_hub/core/utils/assets.dart';
+import '../utils/app_styles.dart';
+import '../utils/assets.dart';
 import 'package:gap/gap.dart';
 
 class FruitItem extends StatelessWidget {

@@ -1,7 +1,7 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
-import 'package:fruit_hub/k.dart';
-import 'package:fruit_hub/core/utils/app_colors.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../../../../k.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 

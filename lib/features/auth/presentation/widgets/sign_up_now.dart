@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_hub/core/utils/app_router.dart';
-import 'package:fruit_hub/core/widgets/mixed_text_button.dart';
+import '../../../../core/utils/app_router.dart';
+import '../../../../core/widgets/mixed_text_button.dart';
 import 'package:go_router/go_router.dart';
 
 class SignUpNow extends StatelessWidget {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_hub/core/widgets/fruit_item.dart';
+import '../../../../core/widgets/fruit_item.dart';
 
 class HomeBestSellerBody extends StatelessWidget {
   const HomeBestSellerBody({super.key});

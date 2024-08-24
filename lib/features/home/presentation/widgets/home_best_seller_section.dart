@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_hub/features/home/presentation/widgets/home_best_seller_head.dart';
+import 'home_best_seller_head.dart';
 import 'package:gap/gap.dart';
 
 import 'home_best_seller_body.dart';

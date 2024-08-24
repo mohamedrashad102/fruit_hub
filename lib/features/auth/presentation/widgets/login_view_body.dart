@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fruit_hub/core/widgets/or_divider.dart';
-import 'package:fruit_hub/features/auth/data/cubits/login_cubit.dart';
-import 'package:fruit_hub/features/auth/presentation/widgets/forget_password_button.dart';
-import 'package:fruit_hub/features/auth/presentation/widgets/login_button.dart';
-import 'package:fruit_hub/features/auth/presentation/widgets/login_by_apple.dart';
-import 'package:fruit_hub/features/auth/presentation/widgets/login_by_facebook.dart';
-import 'package:fruit_hub/features/auth/presentation/widgets/login_by_google.dart';
-import 'package:fruit_hub/features/auth/presentation/widgets/login_email_field.dart';
-import 'package:fruit_hub/features/auth/presentation/widgets/login_password_field.dart';
-import 'package:fruit_hub/features/auth/presentation/widgets/sign_up_now.dart';
-import 'package:fruit_hub/k.dart';
+import '../../../../core/widgets/or_divider.dart';
+import '../../data/cubits/login_cubit.dart';
+import 'forget_password_button.dart';
+import 'login_button.dart';
+import 'login_by_apple.dart';
+import 'login_by_facebook.dart';
+import 'login_by_google.dart';
+import 'login_email_field.dart';
+import 'login_password_field.dart';
+import 'sign_up_now.dart';
+import '../../../../k.dart';
 import 'package:gap/gap.dart';
 
 class LoginViewBody extends StatelessWidget {

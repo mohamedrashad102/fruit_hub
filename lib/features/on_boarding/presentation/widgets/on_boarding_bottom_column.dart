@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:fruit_hub/core/utils/app_styles.dart';
+import '../../../../core/utils/app_styles.dart';
 import 'package:gap/gap.dart';
 
 class OnBoardingBottomColumn extends StatelessWidget {

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fruit_hub/core/extensions/show_snack_bar_extension.dart';
-import 'package:fruit_hub/core/services/cached_data.dart';
-import 'package:fruit_hub/core/utils/app_router.dart';
-import 'package:fruit_hub/features/auth/data/cubits/login_cubit.dart';
+import '../../../../core/extensions/show_snack_bar_extension.dart';
+import '../../../../core/services/cached_data.dart';
+import '../../../../core/utils/app_router.dart';
+import '../../data/cubits/login_cubit.dart';
 import 'package:go_router/go_router.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 

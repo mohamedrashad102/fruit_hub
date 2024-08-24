@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:fruit_hub/features/auth/domain/entities/user_entity.dart';
+import '../../domain/entities/user_entity.dart';
 
 import '../../../../core/models/failure_model.dart';
 import '../../../../core/services/fire_auth_services.dart';

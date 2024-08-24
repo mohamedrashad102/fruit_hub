@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fruit_hub/core/services/data_base_services.dart';
-import 'package:fruit_hub/features/auth/domain/repos/auth_repo.dart';
+import '../../../../core/services/data_base_services.dart';
+import '../../domain/repos/auth_repo.dart';
 
 part 'sign_up_cubit_state.dart';
 

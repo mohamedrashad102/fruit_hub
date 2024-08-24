@@ -1,6 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:fruit_hub/core/utils/app_styles.dart';
+import '../utils/app_styles.dart';
 
 import '../utils/app_colors.dart';
 

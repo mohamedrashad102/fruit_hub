@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_hub/core/utils/app_styles.dart';
-import 'package:fruit_hub/core/widgets/custom_text_button.dart';
+import '../../../../core/utils/app_styles.dart';
+import '../../../../core/widgets/custom_text_button.dart';
 
 class HomeBestSellerHead extends StatelessWidget {
   const HomeBestSellerHead({

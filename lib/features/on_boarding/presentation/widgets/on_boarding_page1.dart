@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_hub/core/services/cached_data.dart';
-import 'package:fruit_hub/core/utils/app_router.dart';
-import 'package:fruit_hub/core/utils/app_styles.dart';
-import 'package:fruit_hub/core/utils/assets.dart';
+import '../../../../core/services/cached_data.dart';
+import '../../../../core/utils/app_router.dart';
+import '../../../../core/utils/app_styles.dart';
+import '../../../../core/utils/assets.dart';
 import 'package:go_router/go_router.dart';
 
 import 'custom_on_boarding_page.dart';

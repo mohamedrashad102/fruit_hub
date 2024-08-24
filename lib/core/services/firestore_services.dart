@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:fruit_hub/core/helpers/print.dart';
-import 'package:fruit_hub/core/utils/app_keys.dart';
+import '../helpers/print.dart';
+import '../utils/app_keys.dart';
 
 import '../../features/auth/domain/entities/user_entity.dart';
 import 'data_base_services.dart';

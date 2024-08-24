@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_hub/core/utils/assets.dart';
+import '../../../../core/utils/assets.dart';
 
 import '../../../../core/utils/app_styles.dart';
 import 'custom_on_boarding_page.dart';

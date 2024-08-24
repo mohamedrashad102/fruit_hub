@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:fruit_hub/core/utils/app_colors.dart';
-import 'package:fruit_hub/core/widgets/mixed_text_button.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../../../../core/widgets/mixed_text_button.dart';
 
 import '../../data/cubits/sign_up_cubit.dart';
 

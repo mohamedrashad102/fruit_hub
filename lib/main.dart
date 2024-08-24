@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:fruit_hub/core/utils/app_router.dart';
+import 'core/utils/app_router.dart';
 
 import 'core/services/cached_data.dart';
 import 'firebase_options.dart';

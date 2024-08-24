@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_hub/core/utils/app_styles.dart';
-import 'package:fruit_hub/core/utils/assets.dart';
-import 'package:fruit_hub/core/widgets/custom_visibiltiy.dart';
 import 'package:svg_flutter/svg.dart';
+
+import '../../../../core/utils/app_styles.dart';
+import '../../../../core/utils/assets.dart';
+import '../../../../core/widgets/custom_visibiltiy.dart';
 
 class OnBoardingTopStack extends StatelessWidget {
   const OnBoardingTopStack({

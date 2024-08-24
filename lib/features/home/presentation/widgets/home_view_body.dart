@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_hub/core/widgets/custom_search_bar.dart';
+import '../../../../core/widgets/custom_search_bar.dart';
 import 'package:gap/gap.dart';
 
 import 'home_best_seller_section.dart';

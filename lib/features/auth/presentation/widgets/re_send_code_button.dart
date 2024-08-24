@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_hub/core/widgets/custom_text_button.dart';
+import '../../../../core/widgets/custom_text_button.dart';
 
 class ReSendCodeButton extends StatelessWidget {
   const ReSendCodeButton({super.key});

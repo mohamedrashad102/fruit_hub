@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_hub/core/widgets/mixed_text_button.dart';
+import '../../../../core/widgets/mixed_text_button.dart';
 import 'package:go_router/go_router.dart';
 
 class LoginNow extends StatelessWidget {

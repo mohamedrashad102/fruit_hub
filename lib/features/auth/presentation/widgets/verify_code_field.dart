@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:fruit_hub/core/widgets/custom_text_field.dart';
+import '../../../../core/widgets/custom_text_field.dart';
 
 class VerifyCodeField extends HookWidget {
   const VerifyCodeField({super.key});
