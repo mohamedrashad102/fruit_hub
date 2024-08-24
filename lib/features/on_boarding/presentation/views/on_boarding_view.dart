@@ -5,9 +5,9 @@ import 'package:fruit_hub/core/utils/app_colors.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../core/services/cached_data.dart';
-import '../../../core/utils/app_router.dart';
-import '../../../core/widgets/custom_button.dart';
+import '../../../../core/services/cached_data.dart';
+import '../../../../core/utils/app_router.dart';
+import '../../../../core/widgets/custom_button.dart';
 import '../widgets/on_boarding_pages.dart';
 
 class OnBoardingView extends StatefulWidget {

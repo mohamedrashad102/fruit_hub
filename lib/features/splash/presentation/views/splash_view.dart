@@ -7,7 +7,7 @@ import 'package:fruit_hub/core/utils/app_router.dart';
 import 'package:go_router/go_router.dart';
 import 'package:svg_flutter/svg.dart';
 
-import '../../../core/utils/assets.dart';
+import '../../../../core/utils/assets.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});

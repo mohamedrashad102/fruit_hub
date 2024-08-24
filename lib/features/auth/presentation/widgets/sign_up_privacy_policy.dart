@@ -4,7 +4,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:fruit_hub/core/utils/app_colors.dart';
 import 'package:fruit_hub/core/widgets/mixed_text_button.dart';
 
-import '../data/cubits/sign_up_cubit.dart';
+import '../../data/cubits/sign_up_cubit.dart';
 
 class SignUpPrivacyPolicy extends HookWidget {
   const SignUpPrivacyPolicy({super.key});

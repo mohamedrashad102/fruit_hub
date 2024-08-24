@@ -3,17 +3,17 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:fruit_hub/core/widgets/custom_text_field.dart';
 
-import '../../../core/helpers/validator.dart';
-import '../data/cubits/sign_up_cubit.dart';
+import '../../../../core/helpers/validator.dart';
+import '../../data/cubits/login_cubit.dart';
 
-class SignUpPasswordField extends HookWidget {
-  const SignUpPasswordField({
+class LoginPasswordField extends HookWidget {
+  const LoginPasswordField({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    final isVisible = useState(true);
+    final isVisible = useState(false);
     return CustomTextField(
       hintText: 'كلمة المرور',
       obscureText: !isVisible.value,
@@ -26,8 +26,8 @@ class SignUpPasswordField extends HookWidget {
           color: const Color(0XFFC9CECF),
         ),
       ),
-      onChanged: (value) => context.read<SignUpCubit>().password = value,
       validator: Validator.validatePassword,
+      onChanged: context.read<LoginCubit>().changePassword,
     );
   }
 }

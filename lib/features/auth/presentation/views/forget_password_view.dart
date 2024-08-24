@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_hub/core/utils/app_styles.dart';
+import 'package:fruit_hub/core/widgets/custom_app_bar.dart';
 import 'package:gap/gap.dart';
 
-import '../../../core/widgets/custom_app_bar.dart';
-import '../../../k.dart';
-import '../widgets/re_send_code_button.dart';
-import '../widgets/verify_code_field.dart';
+import '../../../../core/utils/app_styles.dart';
+import '../../../../k.dart';
+import '../widgets/forget_password_number_field.dart';
+import '../widgets/send_code_button.dart';
 
-class VerifyCodeView extends StatelessWidget {
-  const VerifyCodeView({super.key});
+class ForgetPasswordView extends StatelessWidget {
+  const ForgetPasswordView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(
-        title: 'التحقق من رمز التحقق',
+        title: 'نسيان كلمة المرور',
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(
@@ -24,14 +24,15 @@ class VerifyCodeView extends StatelessWidget {
         child: Column(
           children: [
             Text(
-              'أدخل الرمز الذي أرسلناه إلى عنوان بريد التالي Maxxx@email.com',
+              'لا تقلق ، ما عليك سوى كتابة رقم هاتفك وسنرسل رمز التحقق.',
               style: AppStyles.semiBold16.copyWith(
                 color: const Color(0xff616A6B),
               ),
             ),
+            const Gap(15),
+            const ForgetPasswordNumberField(),
             const Gap(20),
-            const VerifyCodeField(),
-            const ReSendCodeButton(),
+            const SendCodeButton(),
           ],
         ),
       ),

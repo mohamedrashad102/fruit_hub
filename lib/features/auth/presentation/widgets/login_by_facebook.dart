@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruit_hub/core/utils/assets.dart';
-import 'package:fruit_hub/features/auth/widgets/auth_button.dart';
+import 'package:fruit_hub/features/auth/presentation/widgets/auth_button.dart';
 
-import '../data/cubits/login_cubit.dart';
+import '../../data/cubits/login_cubit.dart';
 
 class LoginByFacebook extends StatelessWidget {
   const LoginByFacebook({

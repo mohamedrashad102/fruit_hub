@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-import '../../../core/utils/app_styles.dart';
+import '../../../../core/utils/app_styles.dart';
 
 class HomeViewAppBar extends StatelessWidget implements PreferredSizeWidget {
   const HomeViewAppBar({super.key});
