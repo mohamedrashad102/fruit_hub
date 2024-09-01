@@ -29,10 +29,7 @@ class AppStyles {
     color: const Color(0xFF0C0D0D),
   );
 
-  static final TextStyle semiBold11 = _semiBold.copyWith(
-    fontSize: 11,
-    color: const Color(0xff1b5e37),
-  );
+  
   static final TextStyle semiBold12 = _semiBold.copyWith(
     fontSize: 12,
     color: const Color(0xff1b5e37),

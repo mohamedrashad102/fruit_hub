@@ -1,3 +1,4 @@
+// ignore_for_file: prefer_single_quotes
 class Assets {
   Assets._();
   
@@ -37,6 +38,22 @@ class Assets {
   /// assets/images/on_boarding_logo2.svg
   static const String imagesOnBoardingLogo2 = "assets/images/on_boarding_logo2.svg";
 
+  /// Assets for imagesSelectedAccount
+  /// assets/images/selected_account.png
+  static const String imagesSelectedAccount = "assets/images/selected_account.png";
+
+  /// Assets for imagesSelectedCart
+  /// assets/images/selected_cart.png
+  static const String imagesSelectedCart = "assets/images/selected_cart.png";
+
+  /// Assets for imagesSelectedHome
+  /// assets/images/selected_home.png
+  static const String imagesSelectedHome = "assets/images/selected_home.png";
+
+  /// Assets for imagesSelectedProducts
+  /// assets/images/selected_products.png
+  static const String imagesSelectedProducts = "assets/images/selected_products.png";
+
   /// Assets for imagesSplashBottom
   /// assets/images/splash_bottom.svg
   static const String imagesSplashBottom = "assets/images/splash_bottom.svg";
@@ -52,5 +69,21 @@ class Assets {
   /// Assets for imagesStrawberry
   /// assets/images/strawberry.png
   static const String imagesStrawberry = "assets/images/strawberry.png";
+
+  /// Assets for imagesUnselectedAccount
+  /// assets/images/unselected_account.png
+  static const String imagesUnselectedAccount = "assets/images/unselected_account.png";
+
+  /// Assets for imagesUnselectedCart
+  /// assets/images/unselected_cart.png
+  static const String imagesUnselectedCart = "assets/images/unselected_cart.png";
+
+  /// Assets for imagesUnselectedHome
+  /// assets/images/unselected_home.png
+  static const String imagesUnselectedHome = "assets/images/unselected_home.png";
+
+  /// Assets for imagesUnselectedProducts
+  /// assets/images/unselected_products.png
+  static const String imagesUnselectedProducts = "assets/images/unselected_products.png";
 }
 

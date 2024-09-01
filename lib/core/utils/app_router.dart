@@ -1,16 +1,17 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../helpers/singleton.dart';
+import 'package:go_router/go_router.dart';
+
 import '../../features/auth/data/cubits/login_cubit.dart';
 import '../../features/auth/data/cubits/sign_up_cubit.dart';
 import '../../features/auth/presentation/views/forget_password_view.dart';
 import '../../features/auth/presentation/views/login_view.dart';
 import '../../features/auth/presentation/views/sign_up_view.dart';
 import '../../features/auth/presentation/views/verify_code_view.dart';
-import '../../features/on_boarding/presentation/views/on_boarding_view.dart';
-import 'package:go_router/go_router.dart';
-
+import '../../features/bottom_navigation/presentation/views/bottom_navigation_view.dart';
 import '../../features/home/presentation/views/home_view.dart';
+import '../../features/on_boarding/presentation/views/on_boarding_view.dart';
 import '../../features/splash/presentation/views/splash_view.dart';
+import '../helpers/singleton.dart';
 
 class AppRouter {
   static const onBoardingView = '/onBoardingView';
@@ -20,6 +21,7 @@ class AppRouter {
   static const verifyCodeView = '/verifyCodeView';
   static const newPasswordView = '/newPasswordView';
   static const homeView = '/homeView';
+  static const bottomNavigation = '/bottomNavigation';
 
   static final GoRouter router = GoRouter(
     routes: [
@@ -65,6 +67,14 @@ class AppRouter {
       GoRoute(
         path: homeView,
         builder: (context, state) => const HomeView(),
+      ),
+      GoRoute(
+        path: homeView,
+        builder: (context, state) => const HomeView(),
+      ),
+      GoRoute(
+        path: bottomNavigation,
+        builder: (context, state) => const BottomNavigationView(),
       ),
     ],
   );
