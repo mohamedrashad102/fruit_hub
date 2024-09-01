@@ -2,6 +2,10 @@
 class Assets {
   Assets._();
   
+  /// Assets for imagesAccountIcon
+  /// assets/images/account_icon.svg
+  static const String imagesAccountIcon = "assets/images/account_icon.svg";
+
   /// Assets for imagesAppIcon
   /// assets/images/app_icon.png
   static const String imagesAppIcon = "assets/images/app_icon.png";
@@ -10,13 +14,41 @@ class Assets {
   /// assets/images/apple_icon.svg
   static const String imagesAppleIcon = "assets/images/apple_icon.svg";
 
+  /// Assets for imagesBoxIcon
+  /// assets/images/box_icon.svg
+  static const String imagesBoxIcon = "assets/images/box_icon.svg";
+
+  /// Assets for imagesCameraIcon
+  /// assets/images/camera_icon.png
+  static const String imagesCameraIcon = "assets/images/camera_icon.png";
+
+  /// Assets for imagesEmptyWalletIcon
+  /// assets/images/empty_wallet_icon.svg
+  static const String imagesEmptyWalletIcon = "assets/images/empty_wallet_icon.svg";
+
   /// Assets for imagesFacebookIcon
   /// assets/images/facebook_icon.svg
   static const String imagesFacebookIcon = "assets/images/facebook_icon.svg";
 
+  /// Assets for imagesGlobalIcon
+  /// assets/images/global_icon.svg
+  static const String imagesGlobalIcon = "assets/images/global_icon.svg";
+
   /// Assets for imagesGoogleIcon
   /// assets/images/google_icon.svg
   static const String imagesGoogleIcon = "assets/images/google_icon.svg";
+
+  /// Assets for imagesHeartIcon
+  /// assets/images/heart_icon.svg
+  static const String imagesHeartIcon = "assets/images/heart_icon.svg";
+
+  /// Assets for imagesMagicpenIcon
+  /// assets/images/magicpen_icon.svg
+  static const String imagesMagicpenIcon = "assets/images/magicpen_icon.svg";
+
+  /// Assets for imagesNotificationIcon
+  /// assets/images/notification_icon.svg
+  static const String imagesNotificationIcon = "assets/images/notification_icon.svg";
 
   /// Assets for imagesOffer1
   /// assets/images/offer1.png

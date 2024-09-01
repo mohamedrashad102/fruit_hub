@@ -38,7 +38,7 @@ class _SplashViewState extends State<SplashView> {
       if (mounted) {
         CachedData.getSkipOnboarding()
             ? CachedData.getIsLogin()
-                ? context.go(AppRouter.bottomNavigation)
+                ? context.go(AppRouter.bottomNavigationView)
                 : context.go(AppRouter.loginView)
             : context.go(AppRouter.onBoardingView);
       }

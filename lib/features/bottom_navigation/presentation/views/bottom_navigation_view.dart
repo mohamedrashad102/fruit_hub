@@ -4,7 +4,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 
 import '../../../../core/utils/app_styles.dart';
 import '../../../../core/utils/assets.dart';
-import '../../../auth/presentation/views/login_view.dart';
+import '../../../account/presentation/views/account_view.dart';
 import '../../../home/presentation/views/home_view.dart';
 
 class BottomNavigationView extends HookWidget {
@@ -14,7 +14,7 @@ class BottomNavigationView extends HookWidget {
     HomeView(),
     HomeView(),
     HomeView(),
-    LoginView(),
+    AccountView(),
   ];
 
   @override

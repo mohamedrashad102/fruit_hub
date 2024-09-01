@@ -1,6 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../features/account/presentation/views/account_view.dart';
 import '../../features/auth/data/cubits/login_cubit.dart';
 import '../../features/auth/data/cubits/sign_up_cubit.dart';
 import '../../features/auth/presentation/views/forget_password_view.dart';
@@ -21,7 +22,8 @@ class AppRouter {
   static const verifyCodeView = '/verifyCodeView';
   static const newPasswordView = '/newPasswordView';
   static const homeView = '/homeView';
-  static const bottomNavigation = '/bottomNavigation';
+  static const bottomNavigationView = '/bottomNavigation';
+  static const accountView = '/account';
 
   static final GoRouter router = GoRouter(
     routes: [
@@ -73,8 +75,12 @@ class AppRouter {
         builder: (context, state) => const HomeView(),
       ),
       GoRoute(
-        path: bottomNavigation,
+        path: bottomNavigationView,
         builder: (context, state) => const BottomNavigationView(),
+      ),
+      GoRoute(
+        path: accountView,
+        builder: (context, state) => const AccountView(),
       ),
     ],
   );
