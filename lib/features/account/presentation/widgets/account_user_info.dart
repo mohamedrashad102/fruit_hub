@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
+
 import '../../../../core/utils/app_styles.dart';
 import '../../../../core/utils/assets.dart';
-import 'package:gap/gap.dart';
 
 class AccountUserInfo extends StatelessWidget {
   const AccountUserInfo({super.key});
@@ -16,6 +17,9 @@ class AccountUserInfo extends StatelessWidget {
           children: [
             const CircleAvatar(
               radius: 36,
+              backgroundImage: NetworkImage(
+                'https://media.licdn.com/dms/image/v2/D4D35AQFlWiD8IZnEBw/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1719355084632?e=1726056000&v=beta&t=HIrsRuxKdZW13OZsgT1VhSYFs8OQxzE0wEHYHA53iwQ',
+              ),
             ),
             Positioned(
               bottom: -10,

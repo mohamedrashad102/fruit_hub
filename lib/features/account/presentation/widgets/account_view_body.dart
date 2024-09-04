@@ -3,6 +3,8 @@ import 'package:gap/gap.dart';
 
 import '../../../../k.dart';
 import 'account_general_section.dart';
+import 'account_helping_section.dart';
+import 'account_logout_button.dart';
 import 'account_user_info.dart';
 
 class AccountViewBody extends StatelessWidget {
@@ -22,9 +24,11 @@ class AccountViewBody extends StatelessWidget {
         children: [
           AccountUserInfo(),
           Gap(25),
-          Expanded(
-            child: AccountGeneralSection(),
-          ),
+          AccountGeneralSection(),
+          Gap(25),
+          AccountHelpingSection(),
+          Gap(25),
+          AccountLogoutButton(),
         ],
       ),
     );
