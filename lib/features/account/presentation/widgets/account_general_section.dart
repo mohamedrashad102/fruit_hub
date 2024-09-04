@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
+
 import 'account_favorite_list_tile.dart';
 import 'account_language_list_tile.dart';
 import 'account_notifications_switch_tile.dart';
@@ -6,8 +8,7 @@ import 'account_order_list_tile.dart';
 import 'account_payments_list_tile.dart';
 import 'account_profile_list_tile.dart';
 import 'account_theme_switch_tile.dart';
-import 'account_title.dart';
-import 'package:gap/gap.dart';
+import '../../../../core/widgets/title_text.dart';
 
 class AccountGeneralSection extends StatelessWidget {
   const AccountGeneralSection({super.key});
@@ -17,7 +18,7 @@ class AccountGeneralSection extends StatelessWidget {
     return const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        AccountTitle('عام'),
+        TitleText('عام'),
         Gap(10),
         AccountProfileListTile(),
         AccountOrderListTile(),

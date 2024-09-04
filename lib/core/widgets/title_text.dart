@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/utils/app_styles.dart';
+import '../utils/app_styles.dart';
 
-class AccountTitle extends StatelessWidget {
-  const AccountTitle(
+class TitleText extends StatelessWidget {
+  const TitleText(
     this.title, {
     super.key,
   });
