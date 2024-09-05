@@ -1,10 +1,11 @@
-import '../services/data_base_services.dart';
+import '../services/auth_services.dart';
+import '../services/database_services.dart';
+import '../services/fire_auth_services.dart';
 import '../services/firestore_services.dart';
-import '../../features/auth/data/repos_impl/auth_repo_impl.dart';
 
 class Singleton {
   Singleton._();
 
-  static final AuthRepoImpl authRepoImpl = AuthRepoImpl();
-  static final DataBaseServices firestoreServices = FirestoreServices();
+  static final AuthServices authRepoImpl = FireAuthServices();
+  static final DatabaseServices firestoreServices = FirestoreServices();
 }

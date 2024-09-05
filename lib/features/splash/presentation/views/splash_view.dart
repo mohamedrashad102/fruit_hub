@@ -2,11 +2,11 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '../../../../core/services/cached_data.dart';
-import '../../../../core/utils/app_router.dart';
 import 'package:go_router/go_router.dart';
 import 'package:svg_flutter/svg.dart';
 
+import '../../../../core/services/cached_data.dart';
+import '../../../../core/utils/app_router.dart';
 import '../../../../core/utils/assets.dart';
 
 class SplashView extends StatefulWidget {
@@ -36,6 +36,7 @@ class _SplashViewState extends State<SplashView> {
   void _navigateToOnBoarding() {
     Future.delayed(const Duration(seconds: 2), () {
       if (mounted) {
+        // CachedData.setIsLogin(false);
         CachedData.getSkipOnboarding()
             ? CachedData.getIsLogin()
                 ? context.go(AppRouter.bottomNavigationView)

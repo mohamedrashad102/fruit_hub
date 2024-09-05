@@ -3,17 +3,17 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../domain/repos/auth_repo.dart';
+import '../../../../core/services/auth_services.dart';
 import '../models/user_model.dart';
 
 part 'login_cubit_state.dart';
 
 class LoginCubit extends Cubit<LoginCubitState> {
   LoginCubit({
-    required this.authRepo,
+    required this.authServices,
   }) : super(LoginInitialState());
 
-  final AuthRepo authRepo;
+  final AuthServices authServices;
 
   String _email = '';
   String _password = '';
@@ -26,7 +26,7 @@ class LoginCubit extends Cubit<LoginCubitState> {
   Future<void> loginWithEmailAndPassword() async {
     if (_formNotValid()) return;
     emit(LoginLoadingState());
-    final result = await authRepo.signInWithEmailAndPassword(
+    final result = await authServices.signInWithEmailAndPassword(
       email: _email,
       password: _password,
     );
@@ -38,7 +38,7 @@ class LoginCubit extends Cubit<LoginCubitState> {
 
   Future<void> loginWithGoogle() async {
     emit(LoginLoadingState());
-    final result = await authRepo.signInWithGoogle();
+    final result = await authServices.signInWithGoogle();
     result.fold(
       (failure) => emit(LoginFailureState(failure.message)),
       (user) => emit(LoginSuccessState(UserModel.fromUserEntity(user))),
@@ -47,7 +47,7 @@ class LoginCubit extends Cubit<LoginCubitState> {
 
   Future<void> loginWithFacebook() async {
     emit(LoginLoadingState());
-    final result = await authRepo.signInWithFacebook();
+    final result = await authServices.signInWithFacebook();
     result.fold(
       (failure) => emit(LoginFailureState(failure.message)),
       (user) => emit(LoginSuccessState(UserModel.fromUserEntity(user))),

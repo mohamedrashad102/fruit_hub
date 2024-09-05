@@ -3,15 +3,17 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
+import '../../features/auth/data/models/user_model.dart';
+import '../../features/auth/domain/entities/user_entity.dart';
 import '../helpers/print.dart';
 import '../models/failure_model.dart';
+import 'auth_services.dart';
 
-class FireAuthServices {
-  FireAuthServices._();
+class FireAuthServices implements AuthServices {
+  final FirebaseAuth _auth = FirebaseAuth.instance;
 
-  static final FirebaseAuth auth = FirebaseAuth.instance;
-
-  static Future<Either<Failure, User>> signUpWithEmailAndPassword({
+  @override
+  Future<Either<Failure, UserEntity>> signUpWithEmailAndPassword({
     required String email,
     required String password,
   }) async {
@@ -21,7 +23,8 @@ class FireAuthServices {
         email: email,
         password: password,
       );
-      return Right(credential.user!);
+      final user = UserModel.fromUser(credential.user!);
+      return Right(user);
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
         Print.error('The password provided is too weak.');
@@ -37,16 +40,18 @@ class FireAuthServices {
     }
   }
 
-  static Future<Either<Failure, User>> signInWithEmailAndPassword({
+  @override
+  Future<Either<Failure, UserEntity>> signInWithEmailAndPassword({
     required String email,
     required String password,
   }) async {
     try {
-      final credential = await auth.signInWithEmailAndPassword(
+      final credential = await _auth.signInWithEmailAndPassword(
         email: email,
         password: password,
       );
-      return Right(credential.user!);
+      final user = UserModel.fromUser(credential.user!);
+      return Right(user);
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         Print.error('No user found for that email.');
@@ -60,7 +65,8 @@ class FireAuthServices {
     }
   }
 
-  static Future<Either<Failure, User>> signInWithGoogle() async {
+  @override
+  Future<Either<Failure, UserEntity>> signInWithGoogle() async {
     try {
       final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
       final GoogleSignInAuthentication? googleAuth =
@@ -69,23 +75,41 @@ class FireAuthServices {
         accessToken: googleAuth?.accessToken,
         idToken: googleAuth?.idToken,
       );
-      final userCredential = await auth.signInWithCredential(credential);
-      return Right(userCredential.user!);
+      final userCredential = await _auth.signInWithCredential(credential);
+      final user = UserModel.fromUser(userCredential.user!);
+      return Right(user);
     } on Exception catch (e) {
       Print.error(e.toString());
       return Left(Failure(e.toString()));
     }
   }
 
-  static Future<Either<Failure, User>> signInWithFacebook() async {
+  @override
+  Future<Either<Failure, UserEntity>> signInWithFacebook() async {
     try {
       final LoginResult loginResult = await FacebookAuth.instance.login();
       final OAuthCredential facebookAuthCredential =
           FacebookAuthProvider.credential(loginResult.accessToken!.tokenString);
       final userCredential =
-          await auth.signInWithCredential(facebookAuthCredential);
-      return Right(userCredential.user!);
+          await _auth.signInWithCredential(facebookAuthCredential);
+      final user = UserModel.fromUser(userCredential.user!);
+      return Right(user);
     } catch (e) {
+      Print.error(e.toString());
+      return Left(Failure(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, void>> deleteUser() async {
+    try {
+      if (_auth.currentUser != null) {
+        await _auth.currentUser!.delete();
+        return const Right(null);
+      } else {
+        return Left(Failure('User not found'));
+      }
+    } on Exception catch (e) {
       Print.error(e.toString());
       return Left(Failure(e.toString()));
     }

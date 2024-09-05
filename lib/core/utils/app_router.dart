@@ -41,7 +41,7 @@ class AppRouter {
         path: loginView,
         builder: (context, state) => BlocProvider(
           create: (context) => LoginCubit(
-            authRepo: Singleton.authRepoImpl,
+            authServices: Singleton.authRepoImpl,
           ),
           child: const LoginView(),
         ),
@@ -50,8 +50,8 @@ class AppRouter {
         path: signUpView,
         builder: (context, state) => BlocProvider(
           create: (context) => SignUpCubit(
-            authRepo: Singleton.authRepoImpl,
-            dataBaseServices: Singleton.firestoreServices,
+            authServices: Singleton.authRepoImpl,
+            databaseServices: Singleton.firestoreServices,
           ),
           child: const SignUpView(),
         ),

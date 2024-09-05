@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../core/services/data_base_services.dart';
-import '../../domain/repos/auth_repo.dart';
+
+import '../../../../core/services/auth_services.dart';
+import '../../../../core/services/database_services.dart';
+import '../../domain/entities/user_entity.dart';
 
 part 'sign_up_cubit_state.dart';
 
 class SignUpCubit extends Cubit<SignUpCubitState> {
   SignUpCubit({
-    required this.authRepo,
-    required this.dataBaseServices,
+    required this.authServices,
+    required this.databaseServices,
   }) : super(SignUpInitialState());
 
-  final AuthRepo authRepo;
-  final DataBaseServices dataBaseServices;
+  final AuthServices authServices;
+  final DatabaseServices databaseServices;
 
   String name = '';
   String email = '';
@@ -27,18 +29,36 @@ class SignUpCubit extends Cubit<SignUpCubitState> {
     emit(SignUpLoadingState());
 
     // Sign up user
-    final result = await authRepo.signUpWithEmailAndPassword(
+    final authResult = await authServices.signUpWithEmailAndPassword(
       email: email,
       password: password,
     );
-    result.fold(
-      (failure) => emit(SignUpFailureState(failure.message)),
-      (user) {
-        // Save user data
-        final updatedUser = user.copyWith(name: name);
-        dataBaseServices.saveUserData(updatedUser);
-        emit(SignUpSuccessState());
+
+    // Get user data after sign up
+    late UserEntity userEntity;
+    final isAuthFailure = authResult.fold<bool>(
+      (failure) {
+        emit(SignUpFailureState(failure.message));
+        return true;
       },
+      (user) {
+        userEntity = user;
+        return false;
+      },
+    );
+
+    if (isAuthFailure) return;
+
+    // Save user data
+    final updatedUser = userEntity.copyWith(name: name);
+    final databaseResult = await databaseServices.saveUserData(updatedUser);
+    databaseResult.fold(
+      (failure) async {
+        // Delete user authentication if saving user data failed
+        await authServices.deleteUser();
+        emit(SignUpFailureState(failure.message));
+      },
+      (_) => emit(SignUpSuccessState()),
     );
   }
 
