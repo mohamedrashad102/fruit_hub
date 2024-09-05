@@ -9,6 +9,7 @@ class HomeViewAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      scrolledUnderElevation: 0,
       title: Row(
         children: [
           const CircleAvatar(
