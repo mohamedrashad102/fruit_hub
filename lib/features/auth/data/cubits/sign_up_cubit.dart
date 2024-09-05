@@ -35,8 +35,8 @@ class SignUpCubit extends Cubit<SignUpCubitState> {
     );
 
     // Get user data after sign up
-    late UserEntity userEntity;
-    final isAuthFailure = authResult.fold<bool>(
+    UserEntity? userEntity;
+    authResult.fold<bool>(
       (failure) {
         emit(SignUpFailureState(failure.message));
         return true;
@@ -47,10 +47,11 @@ class SignUpCubit extends Cubit<SignUpCubitState> {
       },
     );
 
-    if (isAuthFailure) return;
+    // sign up failure
+    if (userEntity == null) return;
 
-    // Save user data
-    final updatedUser = userEntity.copyWith(name: name);
+    // Save user data to database
+    final updatedUser = userEntity!.copyWith(name: name);
     final databaseResult = await databaseServices.saveUserData(updatedUser);
     databaseResult.fold(
       (failure) async {

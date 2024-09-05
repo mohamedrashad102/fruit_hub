@@ -6,10 +6,7 @@ class LoginInitialState extends LoginCubitState {}
 
 class LoginLoadingState extends LoginCubitState {}
 
-class LoginSuccessState extends LoginCubitState {
-  final UserModel userModel;
-  LoginSuccessState(this.userModel);
-}
+class LoginSuccessState extends LoginCubitState {}
 
 class LoginFailureState extends LoginCubitState {
   final String message;

@@ -6,6 +6,6 @@ import '../services/firestore_services.dart';
 class Singleton {
   Singleton._();
 
-  static final AuthServices authRepoImpl = FireAuthServices();
+  static final AuthServices fireAuthServices = FireAuthServices();
   static final DatabaseServices firestoreServices = FirestoreServices();
 }
